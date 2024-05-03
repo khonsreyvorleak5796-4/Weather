@@ -1,4 +1,3 @@
-
 async function fet() {
 const url = 'https://weatherapi-com.p.rapidapi.com/current.json?q=phnom%20penh';
 const options = {
