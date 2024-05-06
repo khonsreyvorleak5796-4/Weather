@@ -77,7 +77,7 @@ try {
 fet();
 
 function logout(){
-  localStorage.removeItem("loggedInEmail");
+  localStorage.removeItem("userEmail");
   window.location.href= "../login/index.html";
 }
   document.getElementById('btn-danger').addEventListener('click', logout);
