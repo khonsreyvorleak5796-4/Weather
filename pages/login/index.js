@@ -14,6 +14,7 @@ document.getElementById('loginButton').addEventListener('click', function () {
     }
 });
 
+
 window.onload = function () {
     var storedEmail = localStorage.getItem('userEmail');
     if (storedEmail) {

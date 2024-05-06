@@ -12,13 +12,13 @@ try {
 	const res = await fetch(url, options);
 	const data = await res.json();
    let card = document.getElementById('current');
+   var storedEmail = localStorage.getItem('userEmail');
 
 
-
-   card.innerHTML += `<button type="button" class="btn btn-danger">Log Out</button>
+   card.innerHTML += `
    <div class="text">
      <h1>${data.location.name} Weather Website</h1>
-     <p>Login as:</p>
+     <p>Login as:  ${storedEmail}</p>
    </div>
    <div class="box ">
      <div class="left">
@@ -63,7 +63,7 @@ try {
  
      </div>
    </div>
-   <button type="button" class="btn btn-primary">Share Reaction</button>`;  
+   <a href="../reaction/index.html" type="button" class="btn btn-primary">Share Reaction</a>`;  
 
 
 
@@ -76,3 +76,16 @@ try {
 
 fet();
 
+function logout(){
+  localStorage.removeItem("loggedInEmail");
+  window.location.href= "../login/index.html";
+}
+  document.getElementById('btn-danger').addEventListener('click', logout);
+
+function displayLoggedInUserEmail() {
+  var loggedInEmail = localStorage.getItem("loggedInEmail");
+  if (loggedInEmail) {
+      document.getElementById("loggedInEmail").textContent = "Logged in as: " + loggedInEmail;
+  }
+}
+displayLoggedInUserEmail();

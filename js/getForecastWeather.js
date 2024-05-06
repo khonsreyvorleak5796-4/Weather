@@ -1,4 +1,4 @@
-async function fet(){
+async function fet1(){
 const url = 'https://weatherapi-com.p.rapidapi.com/forecast.json?q=phnom%20penh&days=3';
 const options = {
 	method: 'GET',
@@ -66,4 +66,4 @@ try {
 	console.error(error);
 }
 }
-fet();
+fet1();
